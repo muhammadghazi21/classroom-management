@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Branch_faculty extends Model
+{
+    use HasFactory;
+
+        /**
+     * Get the post that owns the comment.
+     *  
+     * Syntax: return $this->belongsTo(Post::class, 'foreign_key', 'owner_key');
+     *
+     * Example: return $this->belongsTo(Post::class, 'post_id', 'id');
+     * 
+     */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
+
+    public function faculty()
+    {
+        return $this->belongsTo(Faculty::class);
+    }
+
+    public function buildings()
+    {
+        return $this->hasMany(Building::class);
+    }
+}
